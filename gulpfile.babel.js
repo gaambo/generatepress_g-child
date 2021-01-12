@@ -21,8 +21,11 @@ import wpPot from "gulp-wp-pot"; // For generating the .pot file.
 
 import config from "./gulp.config";
 
-const errorHandler = (error) => {
-  console.error(error);
+/**
+ * An error handler method to be used with plumber.
+ */
+const errorHandler = error => {
+  console.error(error.messageFormatted);
 };
 
 /**

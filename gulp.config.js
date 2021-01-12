@@ -75,9 +75,7 @@ export default {
   translate: {
     srcDir: "./",
     src: ["includes/**/*.php", "templates/**/*.php", "*.php", "!vendor"],
-    twigFiles: ["templates/**/*.twig"],
     dstDir: "./languages",
-    cacheFolder: ".cache"
   },
   otherFiles: [
     // examples:

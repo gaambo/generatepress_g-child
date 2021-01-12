@@ -97,7 +97,7 @@ function generateColorCss()
     // Initiate our CSS class
     $css = new \GeneratePress_CSS;
 
-    // Add theme color custom properties
+    // Add theme colors as CSS custom properties
     $css->set_selector(':root');
     foreach (COLORS as $color => $value) {
         $css->add_property('--' . esc_attr($color), esc_attr($value));
