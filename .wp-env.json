@@ -1,0 +1,7 @@
+{
+  "themes": [
+    "https://downloads.wordpress.org/theme/generatepress.3.0.2.zip",
+    "."
+  ],
+  "plugins": ["https://downloads.wordpress.org/plugin/generateblocks.1.2.0.zip"]
+}
