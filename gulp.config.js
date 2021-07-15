@@ -4,8 +4,7 @@ export default {
   styles: {
     srcDir: "./src/css",
     src: ["main.scss", "editor.scss"],
-    dstDir: "./assets/css",
-    prefixBrowsers: ["last 2 versions", "> 2%"]
+    dstDir: "./assets/css"
   },
   scripts: {
     srcDir: "./src/js",
@@ -14,13 +13,24 @@ export default {
       {
         path: "editor.js",
         babelConfig: {
-          exclude: ["node_modules/classnames/**"],
+          // exclude: ["node_modules/classnames/**"],
           presets: ["@babel/preset-env", "@babel/preset-react"]
         }
       }
     ],
     dstDir: "./assets/js",
-    babelPreset: ["@babel/preset-env"],
+    babelPreset: [
+      [
+        "@babel/env",
+        {
+          corejs: 2,
+          useBuiltIns: "usage",
+          targets: {
+            browsers: "defaults"
+          }
+        }
+      ]
+    ],
     external: [
       "jquery",
       "@wordpress/components",
@@ -42,7 +52,8 @@ export default {
       "@wordpress/keycodes",
       "lodash",
       "react",
-      "react-dom"
+      "react-dom",
+      "swiper"
     ],
     globals: {
       jquery: "jQuery",
@@ -65,7 +76,8 @@ export default {
       "@wordpress/keycodes": "wp.keycodes",
       lodash: "lodash",
       react: "React",
-      "react-dom": "ReactDOM"
+      "react-dom": "ReactDOM",
+      swiper: "Swiper"
     }
   },
   images: {
@@ -75,7 +87,9 @@ export default {
   translate: {
     srcDir: "./",
     src: ["includes/**/*.php", "templates/**/*.php", "*.php", "!vendor"],
+    twigFiles: ["templates/**/*.twig"],
     dstDir: "./languages",
+    cacheFolder: ".cache"
   },
   otherFiles: [
     // examples:
